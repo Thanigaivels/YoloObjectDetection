@@ -1,0 +1,1 @@
+Download yolov3.weights from the yolo's official website and place it in the project directory.
