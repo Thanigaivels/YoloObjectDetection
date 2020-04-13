@@ -2,7 +2,7 @@ import cv2
 import numpy as np 
 
 def load_yolo():
-    net = cv2.dnn.readNet("tiny-yolo.weights", "tiny-yolo.cfg")
+    net = cv2.dnn.readNet("yolov3.weights", "yolov3.cfg")
     classes = []
     with open("coco.names", "r") as f:
         classes = [line.strip() for line in f.readlines()]
@@ -27,7 +27,6 @@ def get_box_dimensions(outputs, height, width):
     boxes = []
     confs = []
     class_ids = []
-    #print(outputs[1])
     for output in outputs:
         for detect in output:
             scores = detect[5:]
@@ -95,6 +94,7 @@ def webcam():
             break
     cap.release()
     cv2.destroyAllWindows()    
-start_video('1.avi')
-#image_detect('2.jpg')
-#webcam()
+
+#start_video('1.avi') #for video
+#image_detect('1.jpg') #for images
+webcam() #for live video from webcams
