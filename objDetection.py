@@ -95,6 +95,6 @@ def webcam():
     cap.release()
     cv2.destroyAllWindows()    
 
-#start_video('1.avi') #for video
+start_video('1.avi') #for video
 #image_detect('1.jpg') #for images
-webcam() #for live video from webcams
+#webcam() #for live video from webcams
